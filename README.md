@@ -22,12 +22,10 @@ The Vite development server proxies `/api` requests to `http://localhost:5000`. 
 
 ### Backend — Render
 
-Create a new Blueprint from this repository and use the included `render.yaml`, or create a Node web service with `backend` as its root directory, `npm install` as its build command, and `npm start` as its start command. Set:
+Create a new Blueprint from this repository and use the included `render.yaml`, or create a Node web service with `backend` as its root directory, `npm install` as its build command, and `npm run seed && npm start` as its start command. This idempotently adds the sample catalog at startup without replacing existing products. Set:
 
 - `MONGODB_URI`: your MongoDB Atlas connection string
 - `CLIENT_ORIGIN`: the exact deployed Vercel origin, for example `https://your-store.vercel.app`
-
-After the service is live, run `npm run seed` from `backend` with the production `MONGODB_URI` (or seed the database before deploying).
 
 ### Frontend — Vercel
 
